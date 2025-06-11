@@ -5,10 +5,11 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   return (
-    <nav>
+    <nav style={{ marginBottom: "20px" }}>
       <Link href="/">Home</Link> |{" "}
       {session ? (
         <>
+          <Link href="/create">Create Blog</Link> |{" "}
           <span>{session.user.email}</span> |{" "}
           <button onClick={() => signOut()}>Logout</button>
         </>
